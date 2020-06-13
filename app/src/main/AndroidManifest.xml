@@ -9,6 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ExploreActivity"></activity>
+        <activity android:name=".ReviewActivity" />
+        <activity android:name=".ExamViewActivity" />
+        <activity android:name=".ForumViewActivity" />
+        <activity android:name=".CourseViewActivity" />
+        <activity android:name=".AssessmentActivity" />
+        <activity android:name=".CoursesActivity" />
+        <activity android:name=".ForumsActivity" />
+        <activity android:name=".ExamsActivity" />
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
