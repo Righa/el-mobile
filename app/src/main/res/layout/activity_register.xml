@@ -58,7 +58,8 @@
             android:layout_below="@id/confirm_password"
             android:layout_alignParentEnd="true"
             android:text="@string/register"
-            android:layout_marginTop="11dp" />
+            android:layout_marginTop="11dp"
+            android:layout_alignParentRight="true" />
 
     </RelativeLayout>
 

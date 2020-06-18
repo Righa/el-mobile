@@ -22,4 +22,6 @@
     <string name="forums">FORUMS</string>
     <string name="courses">COURSES</string>
     <string name="assessment">ASSESSMENT</string>
+    <string name="welcome_message">Welcome to our e-learning network. If you have never used this application before press the sign up button to register. Otherwise press the login button to sign in with your email and password.</string>
+    <string name="e_learning">E-LEARNING</string>
 </resources>
