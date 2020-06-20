@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="11dp"
     android:background="@drawable/e_learning_wall"
-    tools:context=".MainActivity">
+    tools:context=".WelcomeActivity">
 
     <ImageView
         android:id="@+id/welcome_logo"
