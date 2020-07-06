@@ -11,6 +11,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //check-auth
         Intent intent = new Intent(SplashScreen.this, WelcomeActivity.class);
         startActivity(intent);
         finish();

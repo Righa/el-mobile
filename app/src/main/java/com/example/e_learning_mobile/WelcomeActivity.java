@@ -9,6 +9,9 @@ import android.widget.Button;
 
 public class WelcomeActivity extends AppCompatActivity {
 
+    public static String CARRY_HOST = "https://2e61a3784c94.ngrok.io/api/";
+    public static String CARRY_TOKEN = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

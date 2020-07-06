@@ -11,17 +11,21 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="name">Name...</string>
-    <string name="email">Email...</string>
-    <string name="password">Password...</string>
-    <string name="confirm_password">Confirm password...</string>
+    <string name="name">Name…</string>
+    <string name="email">Email…</string>
+    <string name="password">Password…</string>
+    <string name="confirm_password">Confirm password…</string>
     <string name="register">REGISTER</string>
     <string name="login">LOGIN</string>
     <string name="dashboard">DASHBOARD</string>
+    <string name="explore">EXPLORE</string>
     <string name="exams">EXAMS</string>
     <string name="forums">FORUMS</string>
     <string name="courses">COURSES</string>
     <string name="assessment">ASSESSMENT</string>
     <string name="welcome_message">Welcome to our e-learning network. If you have never used this application before press the sign up button to register. Otherwise press the login button to sign in with your email and password.</string>
     <string name="e_learning">E-LEARNING</string>
+    <string name="first_name">First name...</string>
+    <string name="last_name">Last Name...</string>
+    <string name="i_am_a_teacher">I am a teacher</string>
 </resources>

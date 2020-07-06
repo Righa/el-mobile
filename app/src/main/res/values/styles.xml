@@ -14,4 +14,9 @@
         <item name="android:windowBackground">@drawable/drawable_splash</item>
     </style>
 
+    <style name="tiny_tabs" parent="TextAppearance.Design.CollapsingToolbar.Expanded">
+        <item name="android:textSize">7sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
 </resources>

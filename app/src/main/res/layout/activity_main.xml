@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,59 +8,67 @@
     android:background="@drawable/e_learning_wall"
     tools:context=".WelcomeActivity">
 
-    <ImageView
-        android:id="@+id/welcome_logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/e_learning_icon"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/welcome_title"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/e_learning"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintTop_toBottomOf="@id/welcome_logo"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        android:padding="11dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/welcome_message"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:textColor="@android:color/black"
-        android:background="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@id/btn_sign_up"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcome_title" />
+        <ImageView
+            android:id="@+id/welcome_logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/e_learning_icon"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/welcome" />
 
-    <Button
-        android:id="@+id/btn_sign_in"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sign_in"
-        android:background="@color/colorPrimary"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/btn_sign_up"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/welcome_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/e_learning"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@id/welcome_logo"
+            android:layout_centerHorizontal="true"/>
 
-    <Button
-        android:id="@+id/btn_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sign_up"
-        android:background="@color/colorPrimary"
-        app:layout_constraintLeft_toRightOf="@id/btn_sign_in"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/welcome_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_message"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_margin="11dp"
+            android:textColor="@android:color/black"
+            android:background="@android:color/white"
+            android:layout_below="@id/welcome_title"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in"
+            android:background="@color/colorPrimary"
+            android:layout_below="@id/welcome_message"
+            android:layout_margin="11dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:background="@color/colorPrimary"
+            android:layout_below="@id/welcome_message"
+            android:layout_margin="11dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
