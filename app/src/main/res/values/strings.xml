@@ -28,4 +28,10 @@
     <string name="first_name">First name...</string>
     <string name="last_name">Last Name...</string>
     <string name="i_am_a_teacher">I am a teacher</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="review">REVIEW</string>
+    <string name="image_description">image</string>
+    <string name="attempt_exam">ATTEMPT</string>
 </resources>

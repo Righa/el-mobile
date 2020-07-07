@@ -16,7 +16,7 @@
         <activity android:name=".ExamViewActivity" />
         <activity android:name=".ForumViewActivity" />
         <activity android:name=".CourseViewActivity" />
-        <activity android:name=".DashboardActivity" />
+        <activity android:name=".DashboardActivity" android:label="@string/dashboard" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SplashScreen"

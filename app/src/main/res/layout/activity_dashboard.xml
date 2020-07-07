@@ -13,15 +13,15 @@
         android:layout_height="150dp"
         android:background="@drawable/intellijens_wall"
         android:layout_alignParentTop="true"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        app:titleTextColor="@android:color/white" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabTextAppearance="@style/tiny_tabs"
-        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabTextColor="@android:color/white"
         app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextAppearance="@style/tiny_tabs"
         android:layout_alignBottom="@id/dash_tool_bar" />
 
     <androidx.viewpager.widget.ViewPager

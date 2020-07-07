@@ -30,10 +30,33 @@ public class DashboardActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText(R.string.courses));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.exams));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.forums));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.assessment));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.review));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        ViewPager pager = findViewById(R.id.view_pager);
-    }
+        final ViewPager pager = findViewById(R.id.view_pager);
 
+        PageAdapter pageAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+
+        pager.setAdapter(pageAdapter);
+
+        pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                pager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+    }
 }
