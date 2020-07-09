@@ -26,25 +26,23 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_course, parent, false));
+        return new ViewHolder(LayoutInflater.from(meContext).inflate(R.layout.list_item_course, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Course currentCourse = meCourses.get(position);
-        Glide.with(meContext).load(R.drawable.ic_courses).into(holder.courseAvatar);
-        holder.courseName.setText(currentCourse.getName());
-        holder.courseDescription.setText(currentCourse.getDescription());
-        Glide.with(meContext).load(R.drawable.ic_account_circle).into(holder.teacherAvatar);
-        holder.teacherName.setText(currentCourse.getTeacherId());
+
+        holder.catchMe(currentCourse);
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return meCourses.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView courseAvatar;
         private TextView courseName;
         private TextView courseDescription;
@@ -58,6 +56,14 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
             courseDescription = itemView.findViewById(R.id.course_description);
             teacherAvatar = itemView.findViewById(R.id.teacher_avatar);
             teacherName = itemView.findViewById(R.id.teacher_name);
+        }
+
+        void catchMe(Course currentCourse) {
+            Glide.with(meContext).load(R.drawable.ic_courses).into(courseAvatar);
+            courseName.setText(currentCourse.getName());
+            courseDescription.setText(currentCourse.getDescription());
+            Glide.with(meContext).load(R.drawable.ic_account_circle).into(teacherAvatar);
+            teacherName.setText(currentCourse.getTeacherId());
         }
     }
 }
