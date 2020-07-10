@@ -32,7 +32,8 @@
             android:textSize="9sp"
             android:padding="9dp"
             android:layout_toRightOf="@id/user_avatar_card"
-            tools:ignore="SmallSp" />
+            tools:ignore="SmallSp"
+            android:layout_toEndOf="@id/user_avatar_card" />
 
         <TextView
             android:id="@+id/answer_text"
@@ -54,7 +55,7 @@
             android:padding="6dp"
             android:textSize="6sp"
             android:layout_alignParentEnd="true"
-            tools:ignore="SmallSp" />
+            tools:ignore="RelativeOverlap,SmallSp" />
 
     </RelativeLayout>
 
