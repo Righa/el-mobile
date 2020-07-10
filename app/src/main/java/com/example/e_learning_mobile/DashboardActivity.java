@@ -7,11 +7,13 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
 public class DashboardActivity extends AppCompatActivity {
+    ImageView accountButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +23,13 @@ public class DashboardActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.dash_tool_bar);
         setSupportActionBar(toolbar);
 
-        Intent user = getIntent();
-        String username = user.getStringExtra("NAME");
-        Toast.makeText(this, username, Toast.LENGTH_LONG).show();
+        accountButton = findViewById(R.id.btn_account);
+        accountButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, ProfileActivity.class));
+            }
+        });
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText(R.string.explore));
@@ -31,7 +37,6 @@ public class DashboardActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText(R.string.exams));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.forums));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.review));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager pager = findViewById(R.id.view_pager);
 

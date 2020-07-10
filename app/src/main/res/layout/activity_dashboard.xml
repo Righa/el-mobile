@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/e_learning_wall"
+    android:background="@color/page_back"
     tools:context=".DashboardActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -19,10 +19,30 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:tabGravity="fill"
+        app:tabMode="scrollable"
+        app:tabPadding="0dp"
         app:tabTextColor="@android:color/white"
         app:tabSelectedTextColor="@color/colorPrimary"
-        app:tabTextAppearance="@style/tiny_tabs"
         android:layout_alignBottom="@id/dash_tool_bar" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_margin="9dp"
+        app:cardCornerRadius="22dp"
+        android:layout_above="@id/tab_layout"
+        android:layout_alignRight="@id/dash_tool_bar"
+        android:layout_alignEnd="@id/dash_tool_bar" >
+
+        <ImageView
+            android:id="@+id/btn_account"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_account_circle"
+            android:contentDescription="@string/image_description" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
