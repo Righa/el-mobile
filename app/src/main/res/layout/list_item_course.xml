@@ -20,12 +20,13 @@
 
         <TextView
             android:id="@+id/course_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/courses"
-            android:textColor="@android:color/black"
+            android:textColor="@color/egg_tabs"
             android:layout_toRightOf="@id/course_avatar"
             android:padding="6dp"
+            android:background="@color/colorPrimary"
             android:layout_toEndOf="@id/course_avatar" />
 
         <TextView

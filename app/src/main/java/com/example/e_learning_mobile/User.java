@@ -7,14 +7,18 @@ public class User {
     private String lastName;
     private String email;
     private String role;
+    private String birthday;
+    private String gender;
 
-    public User(String userId, String userAvatar, String firstName, String lastName, String email, String role) {
+    public User(String userId, String userAvatar, String firstName, String lastName, String email, String role, String birthday, String gender) {
         this.userId = userId;
         this.userAvatar = userAvatar;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.role = role;
+        this.birthday = birthday;
+        this.gender = gender;
     }
 
     public String getUserId() {
@@ -39,5 +43,13 @@ public class User {
 
     public String getRole() {
         return role;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public String getGender() {
+        return gender;
     }
 }

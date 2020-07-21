@@ -7,21 +7,40 @@
     <application
         android:allowBackup="false"
         android:fullBackupContent="false"
-        android:icon="@mipmap/ic_e_learning"
+        android:icon="@mipmap/ic_fav"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_e_learning_round"
+        android:roundIcon="@mipmap/ic_fav_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".ReviewActivity" />
-        <activity android:name=".ExamViewActivity" />
-        <activity android:name=".ForumViewActivity" />
-        <activity android:name=".CourseViewActivity" />
+        <activity android:name=".NewForumActivity" android:label="@string/new_forum" android:parentActivityName=".DashboardActivity" />
+        <activity android:name=".NewExamActivity" android:label="@string/new_exam" android:parentActivityName=".DashboardActivity"/>
+        <activity android:name=".NewCourseActivity" android:label="@string/new_course" android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/my_profile" android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".ReviewActivity"
+            android:label="@string/review" android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".ExamViewActivity"
+            android:label="@string/exams" android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".ForumViewActivity"
+            android:label="@string/forums" android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".CourseViewActivity"
+            android:label="@string/courses" android:parentActivityName=".DashboardActivity" />
         <activity
             android:name=".DashboardActivity"
-            android:label="@string/dashboard" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
+            android:label="@string/dashboard" android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/login"
+            android:parentActivityName=".WelcomeActivity" />
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/register"
+            android:parentActivityName=".WelcomeActivity" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">

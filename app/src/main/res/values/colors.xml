@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0AC6B4</color>
-    <color name="colorPrimaryDark">#04685F</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#3E2723</color>
+    <color name="colorPrimaryDark">#1B0000</color>
+    <color name="colorAccent">#6A4F4B</color>
+
     <color name="image_back">#939292</color>
-    <color name="page_back">#434343</color>
+    <color name="page_back">#D7CCC8</color>
+    <color name="egg_tabs">#E3A11D</color>
 </resources>

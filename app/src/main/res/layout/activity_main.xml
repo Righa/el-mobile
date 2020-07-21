@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="11dp"
-    android:background="@drawable/e_learning_wall"
+    android:background="@color/page_back"
     tools:context=".WelcomeActivity">
 
     <RelativeLayout
@@ -17,7 +16,7 @@
             android:id="@+id/welcome_logo"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/e_learning_icon"
+            android:src="@drawable/e_learning_ic_dark"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/welcome" />
 
@@ -42,7 +41,6 @@
             android:gravity="center"
             android:layout_margin="11dp"
             android:textColor="@android:color/black"
-            android:background="@android:color/white"
             android:layout_below="@id/welcome_title"/>
 
         <Button
@@ -50,7 +48,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sign_in"
-            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round_buttons"
             android:layout_below="@id/welcome_message"
             android:layout_margin="11dp"
             android:layout_alignParentLeft="true"
@@ -61,7 +60,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sign_up"
-            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round_buttons"
             android:layout_below="@id/welcome_message"
             android:layout_margin="11dp"
             android:layout_alignParentRight="true"

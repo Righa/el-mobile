@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/page_back"
     tools:context=".RegisterActivity">
 
     <RelativeLayout
@@ -11,21 +12,28 @@
         android:layout_height="wrap_content"
         android:padding="11dp">
 
-        <TextView
-            android:id="@+id/register_form_head"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/egg_tabs" />
+
+        <ImageView
+            android:id="@+id/u_ic"
+            android:layout_width="99dp"
+            android:layout_height="99dp"
+            android:src="@drawable/ic_account_circle"
+            android:layout_below="@id/tool_bar"
+            android:layout_centerHorizontal="true" />
 
         <EditText
             android:id="@+id/register_first_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/register_form_head"
+            android:layout_below="@id/u_ic"
             android:hint="@string/first_name"
-            android:layout_marginTop="11dp"
+            android:layout_margin="11dp"
             android:autofillHints=""
             android:inputType="textPersonName" />
 
@@ -35,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/register_first_name"
             android:hint="@string/last_name"
-            android:layout_marginTop="11dp"
+            android:layout_margin="11dp"
             android:autofillHints=""
             android:inputType="textPersonName" />
 
@@ -45,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/register_last_name"
             android:hint="@string/email"
-            android:layout_marginTop="11dp"
+            android:layout_margin="11dp"
             android:autofillHints=""
             android:inputType="textEmailAddress" />
 
@@ -55,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/register_email"
             android:hint="@string/password"
-            android:layout_marginTop="11dp"
+            android:layout_margin="11dp"
             android:autofillHints=""
             android:inputType="textPassword" />
 
@@ -65,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/register_password"
             android:hint="@string/confirm_password"
-            android:layout_marginTop="11dp"
+            android:layout_margin="11dp"
             android:autofillHints=""
             android:inputType="textPassword" />
 
@@ -84,8 +92,9 @@
             android:layout_below="@id/teacher_check"
             android:layout_alignParentEnd="true"
             android:text="@string/register"
-            android:background="@color/colorPrimary"
-            android:layout_marginTop="11dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round_buttons"
+            android:layout_margin="11dp"
             android:layout_alignParentRight="true" />
 
     </RelativeLayout>

@@ -4,16 +4,18 @@ public class Course {
 
     private String courseId;
     private String subjectId;
-    private String teacherId;
+    private User teacher;
     private String name;
     private String description;
+    private String courseAvatar;
 
-    Course(String courseId, String subjectId, String teacherId, String name, String description) {
+    Course(String courseId, String subjectId, User teacher, String name, String description, String courseAvatar) {
         this.courseId = courseId;
         this.subjectId = subjectId;
-        this.teacherId = teacherId;
+        this.teacher = teacher;
         this.name = name;
         this.description = description;
+        this.courseAvatar = courseAvatar;
     }
     public String getCourseId() {
         return courseId;
@@ -23,8 +25,8 @@ public class Course {
         return subjectId;
     }
 
-    public String getTeacherId() {
-        return teacherId;
+    public User getTeacher() {
+        return teacher;
     }
 
     public String getName() {
@@ -33,5 +35,9 @@ public class Course {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getCourseAvatar() {
+        return courseAvatar;
     }
 }

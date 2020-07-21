@@ -6,17 +6,31 @@
     tools:context=".ExploreFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/explore_head"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/search_field"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:text="@string/explore" />
+        android:hint="@string/search_bar_text"
+        android:autofillHints=""
+        android:layout_marginTop="11dp"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search"
+        android:textColor="@android:color/white"
+        android:background="@drawable/round_buttons"
+        android:layout_margin="4dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/explore_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/explore_head" />
+        android:layout_below="@id/search_field" />
 
 
 </RelativeLayout>

@@ -1,7 +1,5 @@
 package com.example.e_learning_mobile;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +7,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.DefaultRetryPolicy;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -18,22 +18,28 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
     protected String email;
     protected String password;
-    protected String request;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Toolbar toolbar = findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+
+        final ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_chevron);
 
         Button login = findViewById(R.id.btn_login);
 
@@ -43,14 +49,8 @@ public class LoginActivity extends AppCompatActivity {
                 EditText email_view = findViewById(R.id.login_email);
                 EditText password_view = findViewById(R.id.login_password);
 
-                //Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
-                //startActivity(intent);
-
                 email = String.valueOf(email_view.getText());
                 password = String.valueOf(password_view.getText());
-
-                request = "\"email\""+"\""+email+"\""+
-                        "\"password\""+"\""+password+"\"";
 
                 logMeIn();
 
@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                         WelcomeActivity.CARRY_TOKEN = jsonObject.getString("token");
                         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                         JSONObject user = jsonObject.getJSONObject("user");
+                        WelcomeActivity.CURRENT_USER = new User(user.getString("id"), user.getString("id"), user.getString("first_name"), user.getString("last_name"), user.getString("email"), user.getString("role"), user.getString("birthday"), user.getString("gender"));
                         intent.putExtra("NAME", user.getString("first_name"));
                         startActivity(intent);
                     }

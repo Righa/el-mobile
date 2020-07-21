@@ -10,7 +10,10 @@
         android:id="@+id/courses_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/courses" />
+        android:text="@string/my_courses"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:padding="11dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/courses_recycler"

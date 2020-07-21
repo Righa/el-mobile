@@ -11,7 +11,7 @@
         android:id="@+id/dash_tool_bar"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@drawable/intellijens_wall"
+        android:background="@drawable/toolbar_back"
         android:layout_alignParentTop="true"
         app:titleTextColor="@android:color/white" />
 
@@ -22,8 +22,9 @@
         app:tabGravity="fill"
         app:tabMode="scrollable"
         app:tabPadding="0dp"
-        app:tabTextColor="@android:color/white"
-        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="@color/egg_tabs"
+        app:tabSelectedTextColor="@color/page_back"
+        app:tabIndicatorColor="@color/page_back"
         android:layout_alignBottom="@id/dash_tool_bar" />
 
     <androidx.cardview.widget.CardView

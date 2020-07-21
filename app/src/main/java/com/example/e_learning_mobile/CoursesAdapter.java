@@ -63,7 +63,7 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
             courseName.setText(currentCourse.getName());
             courseDescription.setText(currentCourse.getDescription());
             Glide.with(meContext).load(R.drawable.ic_account_circle).into(teacherAvatar);
-            teacherName.setText(currentCourse.getTeacherId());
+            teacherName.setText(currentCourse.getTeacher().getFirstName());
         }
     }
 }
