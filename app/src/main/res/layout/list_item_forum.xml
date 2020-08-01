@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginBottom="6dp">
+    android:layout_margin="6dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,6 +12,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/user_avatar_card"
+            app:cardCornerRadius="16dp"
             android:layout_width="33dp"
             android:layout_height="33dp">
 
@@ -28,9 +29,10 @@
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/forums"
-            android:textSize="9sp"
-            android:padding="9dp"
+            android:text="@string/user_name"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="6sp"
             android:layout_toRightOf="@id/user_avatar_card"
             tools:ignore="SmallSp"
             android:layout_toEndOf="@id/user_avatar_card" />
@@ -38,21 +40,23 @@
         <TextView
             android:id="@+id/answer_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/forums"
-            android:textSize="9sp"
+            android:layout_height="25dp"
+            android:text="@string/forum_question"
+            android:textSize="6sp"
             android:layout_toRightOf="@id/user_avatar_card"
-            android:padding="6dp"
+            android:layout_below="@id/user_name"
+            android:padding="1dp"
             tools:ignore="SmallSp"
             android:layout_toEndOf="@id/user_avatar_card" />
 
         <TextView
+            android:id="@+id/forum_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/attempt_exam"
+            android:text="@string/_1_attempts"
+            android:textColor="@color/colorPrimary"
             android:layout_alignParentRight="true"
             android:layout_alignBottom="@id/user_name"
-            android:padding="6dp"
             android:textSize="6sp"
             android:layout_alignParentEnd="true"
             tools:ignore="RelativeOverlap,SmallSp" />

@@ -15,7 +15,8 @@
             android:id="@+id/course_name_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/courses"
+            android:text="@string/course_name"
+            android:textColor="@color/colorPrimary"
             android:padding="9dp"
             tools:ignore="RelativeOverlap" />
 
@@ -23,9 +24,8 @@
             android:id="@+id/exam_name_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/exams"
+            android:text="@string/exam_name"
             android:layout_below="@id/course_name_view"
-            android:textSize="9sp"
             android:padding="9dp"
             tools:ignore="SmallSp" />
 
@@ -33,7 +33,7 @@
             android:id="@+id/exam_marks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30/30"
+            android:text="@string/_30_30"
             android:padding="9dp"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/review_button"
@@ -44,6 +44,8 @@
             android:layout_width="wrap_content"
             android:layout_height="66dp"
             android:text="@string/review"
+            android:textColor="@color/egg_tabs"
+            android:background="@drawable/round_buttons"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />

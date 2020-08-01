@@ -15,16 +15,16 @@
             android:id="@+id/course_name_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/courses"
+            android:text="@string/course_name"
+            android:textColor="@android:color/black"
             android:padding="6dp" />
 
         <TextView
             android:id="@+id/exam_name_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/exams"
+            android:text="@string/exam_name"
             android:layout_below="@id/course_name_view"
-            android:textSize="9sp"
             android:padding="6dp"
             tools:ignore="SmallSp" />
 
@@ -32,16 +32,16 @@
             android:id="@+id/exam_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Duration: 90min"
-            android:padding="6dp"
+            android:text="@string/duration_90min"
+            android:padding="3dp"
             android:layout_below="@id/exam_name_view"/>
 
         <TextView
             android:id="@+id/exam_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="status: open"
-            android:padding="6dp"
+            android:text="@string/status_open"
+            android:padding="3dp"
             android:layout_below="@id/exam_name_view"
             android:layout_toRightOf="@id/exam_duration"
             android:layout_toEndOf="@id/exam_duration" />
@@ -51,6 +51,8 @@
             android:layout_width="wrap_content"
             android:layout_height="66dp"
             android:text="@string/attempt_exam"
+            android:textColor="@color/egg_tabs"
+            android:background="@drawable/round_buttons"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />

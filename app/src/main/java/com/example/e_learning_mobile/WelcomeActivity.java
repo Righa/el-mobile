@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    public static String CARRY_HOST = "https://5013fc86531e.ngrok.io/api/";
+    public static String CARRY_HOST = "https://c4b41aae1e06.ngrok.io/api/";
     public static String CARRY_TOKEN = "";
     public static User CURRENT_USER;
 

@@ -2,25 +2,21 @@ package com.example.e_learning_mobile;
 
 public class Forum {
     private String forumId;
-    private String studentId;
     private String subjectId;
     private String question;
     private String status;
+    private User student;
 
-    public Forum(String forumId, String studentId, String subjectId, String question, String status) {
+    public Forum(String forumId, String subjectId, String question, String status, User student) {
         this.forumId = forumId;
-        this.studentId = studentId;
         this.subjectId = subjectId;
         this.question = question;
         this.status = status;
+        this.student = student;
     }
 
     public String getForumId() {
         return forumId;
-    }
-
-    public String getStudentId() {
-        return studentId;
     }
 
     public String getSubjectId() {
@@ -33,5 +29,9 @@ public class Forum {
 
     public String getStatus() {
         return status;
+    }
+
+    public User getUser() {
+        return student;
     }
 }

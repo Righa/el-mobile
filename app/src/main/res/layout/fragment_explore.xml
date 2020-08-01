@@ -3,34 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ExploreFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <EditText
-        android:id="@+id/search_field"
-        android:layout_width="240dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/search_bar_text"
-        android:autofillHints=""
-        android:layout_marginTop="11dp"
-        android:inputType="text" />
+        android:background="@drawable/alt_icon_file">
 
-    <Button
-        android:id="@+id/search_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/search"
-        android:textColor="@android:color/white"
-        android:background="@drawable/round_buttons"
-        android:layout_margin="4dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <EditText
+            android:id="@+id/search_field"
+            android:layout_width="match_parent"
+            android:layout_height="33sp"
+            android:hint="@string/search_bar_text"
+            android:autofillHints=""
+            android:layout_marginTop="11dp"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search"
+            android:layout_gravity="end"
+            android:textColor="@android:color/white"
+            android:background="@color/colorPrimaryDark"/>
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/explore_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_field" />
+        android:layout_below="@id/search_bar" />
 
 
 </RelativeLayout>

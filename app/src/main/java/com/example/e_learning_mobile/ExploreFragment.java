@@ -2,6 +2,7 @@ package com.example.e_learning_mobile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,7 +78,8 @@ public class ExploreFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "mi connect error: "+ error, Toast.LENGTH_SHORT).show();
+                Log.e("No Response", String.valueOf(error));
+                Toast.makeText(getContext(), "mi connect error: ", Toast.LENGTH_SHORT).show();
             }
         });
 
