@@ -5,12 +5,16 @@ public class Take {
     private String userId;
     private String examId;
     private String marks;
+    private Course course;
+    private Exam exam;
 
-    public Take(String takeId, String userId, String examId, String marks) {
+    public Take(String takeId, String userId, String examId, String marks, Course course, Exam exam) {
         this.takeId = takeId;
         this.userId = userId;
         this.examId = examId;
         this.marks = marks;
+        this.course = course;
+        this.exam = exam;
     }
 
     public String getTakeId() {
@@ -27,5 +31,13 @@ public class Take {
 
     public String getMarks() {
         return marks;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public Exam getExam() {
+        return exam;
     }
 }

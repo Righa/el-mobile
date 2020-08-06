@@ -7,31 +7,31 @@
     tools:context=".ExploreFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <androidx.cardview.widget.CardView
+
+    <EditText
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/alt_icon_file">
+        android:layout_height="33dp"
+        android:paddingEnd="111dp"
+        android:paddingStart="11dp"
+        android:background="@drawable/alt_icon_file"
+        android:hint="@string/search_bar_text"
+        android:paddingRight="111dp"
+        android:paddingLeft="11dp"
+        android:layout_margin="6dp"
+        android:autofillHints=""
+        android:inputType="text" />
 
-        <EditText
-            android:id="@+id/search_field"
-            android:layout_width="match_parent"
-            android:layout_height="33sp"
-            android:hint="@string/search_bar_text"
-            android:autofillHints=""
-            android:layout_marginTop="11dp"
-            android:inputType="text" />
-
-        <Button
-            android:id="@+id/search_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/search"
-            android:layout_gravity="end"
-            android:textColor="@android:color/white"
-            android:background="@color/colorPrimaryDark"/>
-
-    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:text="@string/search"
+        android:textColor="@android:color/white"
+        android:background="@drawable/round_buttons"
+        android:layout_alignTop="@id/search_bar"
+        android:layout_alignRight="@id/search_bar"
+        android:layout_alignEnd="@id/search_bar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/explore_recycler"

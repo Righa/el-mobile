@@ -86,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
                         WelcomeActivity.CARRY_TOKEN = jsonObject.getString("token");
                         Intent intent = new Intent(RegisterActivity.this, ProfileActivity.class);
                         JSONObject user = jsonObject.getJSONObject("user");
-                        WelcomeActivity.CURRENT_USER = new User(user.getString("id"), user.getString("id"), user.getString("first_name"), user.getString("last_name"), user.getString("email"), user.getString("role"), user.getString("birthday"), user.getString("gender"));
+                        WelcomeActivity.CURRENT_USER = new User(user.getString("id"), user.getString("first_name"), user.getString("last_name"), user.getString("email"), user.getString("role"));
                         startActivity(intent);
                     }
                     else {

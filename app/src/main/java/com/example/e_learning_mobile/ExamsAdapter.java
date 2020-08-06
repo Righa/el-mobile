@@ -52,6 +52,10 @@ public class ExamsAdapter extends RecyclerView.Adapter<ExamsAdapter.ViewHolder> 
         }
 
         void catchMe(Exam currentExam) {
+            courseName.setText(currentExam.getCourse().getName());
+            examName.setText(currentExam.getName());
+            examDuration.setText(currentExam.getDuration());
+            examStatus.setText(currentExam.getOpen());
         }
     }
 }

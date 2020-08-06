@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void logMeIn() {
-        final String login_url = String.format("%s%s", WelcomeActivity.CARRY_HOST, "login");
+        final String login_url = String.format("%s%s", WelcomeActivity.CARRY_HOST, "api/login");
 
         StringRequest loginRequest = new StringRequest(Request.Method.POST, login_url, new Response.Listener<String>() {
             @Override
@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                         WelcomeActivity.CARRY_TOKEN = jsonObject.getString("token");
                         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                         JSONObject user = jsonObject.getJSONObject("user");
-                        WelcomeActivity.CURRENT_USER = new User(user.getString("id"), user.getString("id"), user.getString("first_name"), user.getString("last_name"), user.getString("email"), user.getString("role"), user.getString("birthday"), user.getString("gender"));
+                        WelcomeActivity.CURRENT_USER = new User(user.getString("id"), user.getString("first_name"), user.getString("last_name"), user.getString("email"), user.getString("role"));
                         intent.putExtra("NAME", user.getString("first_name"));
                         startActivity(intent);
                     }

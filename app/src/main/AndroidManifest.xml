@@ -10,7 +10,7 @@
         android:icon="@mipmap/ic_fav"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_fav_round"
-        android:supportsRtl="true"
+        android:supportsRtl="false"
         android:theme="@style/AppTheme">
         <activity android:name=".NewForumActivity" android:label="@string/new_forum" android:parentActivityName=".DashboardActivity" />
         <activity android:name=".NewExamActivity" android:label="@string/new_exam" android:parentActivityName=".DashboardActivity"/>

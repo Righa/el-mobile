@@ -63,7 +63,7 @@ public class ExploreFragment extends Fragment {
                         for (int i = 0; i < courses.length(); i++) {
                             JSONObject course = courses.getJSONObject(i);
                             JSONObject user = course.getJSONObject("teacher");
-                            User teacher = new User(user.getString("id"), user.getString("id"), user.getString("first_name"), user.getString("last_name"), user.getString("email"), user.getString("role"), user.getString("birthday"), user.getString("gender"));
+                            User teacher = new User(user.getString("id"), user.getString("first_name"), user.getString("last_name"), user.getString("email"), user.getString("role"));
                             Course another = new Course(course.getString("id"), course.getString("subject_id"), teacher, course.getString("name"), course.getString("description"), "1");
                             meCourses.add(another);
                         }

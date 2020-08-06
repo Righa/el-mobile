@@ -50,6 +50,9 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.Vi
         }
 
         void catchMe(Take currentTake) {
+            courseName.setText(currentTake.getCourse().getName());
+            examName.setText(currentTake.getExam().getName());
+            examMarks.setText(currentTake.getMarks());
         }
     }
 }
