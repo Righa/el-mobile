@@ -1,5 +1,6 @@
 package com.example.e_learning_mobile;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +34,7 @@ import java.util.Map;
  * A simple {@link Fragment} subclass.
  */
 public class ExploreFragment extends Fragment {
+    private ArrayList<Course> meCourses = new ArrayList<>();
 
     public ExploreFragment() {
         // Required empty public constructor
@@ -41,15 +43,26 @@ public class ExploreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        //load data for this fragment
+        //loadAllCourses(getContext());
+
         // Inflate the layout for this fragment
         View thisPage = inflater.inflate(R.layout.fragment_explore, container, false);
         RecyclerView exploreRecycler = thisPage.findViewById(R.id.explore_recycler);
         exploreRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         exploreRecycler.setHasFixedSize(true);
 
-        final ArrayList<Course> meCourses = new ArrayList<>();
+        CoursesAdapter coursesAdapter = new CoursesAdapter(getContext(), DashboardActivity.ALL_COURSES);
+        exploreRecycler.setAdapter(coursesAdapter);
+        coursesAdapter.notifyDataSetChanged();
 
-        final String courses_uri = String.format("%s%s", WelcomeActivity.CARRY_HOST, "courses");
+        return thisPage;
+    }
+
+    private void loadAllCourses(Context mi) {
+
+        final String courses_uri = String.format("%s%s", WelcomeActivity.CARRY_HOST, "api/courses");
 
         StringRequest loginRequest = new StringRequest(Request.Method.GET, courses_uri, new Response.Listener<String>() {
             @Override
@@ -64,7 +77,7 @@ public class ExploreFragment extends Fragment {
                             JSONObject course = courses.getJSONObject(i);
                             JSONObject user = course.getJSONObject("teacher");
                             User teacher = new User(user.getString("id"), user.getString("first_name"), user.getString("last_name"), user.getString("email"), user.getString("role"));
-                            Course another = new Course(course.getString("id"), course.getString("subject_id"), teacher, course.getString("name"), course.getString("description"), "1");
+                            Course another = new Course(course.getString("id"), course.getString("subject_id"), teacher, course.getString("name"), course.getString("description"));
                             meCourses.add(another);
                         }
                     }
@@ -81,15 +94,16 @@ public class ExploreFragment extends Fragment {
                 Log.e("No Response", String.valueOf(error));
                 Toast.makeText(getContext(), "mi connect error: ", Toast.LENGTH_SHORT).show();
             }
-        });
+        }){
+            @Override
+            public Map<String, String> getHeaders(){
+                Map params = new HashMap();
+                params.put("Authorization", "Bearer " + WelcomeActivity.CARRY_TOKEN);
+                return params;
+            }
+        };
 
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        RequestQueue requestQueue = Volley.newRequestQueue(mi);
         requestQueue.add(loginRequest);
-
-        CoursesAdapter coursesAdapter = new CoursesAdapter(getContext(), meCourses);
-        exploreRecycler.setAdapter(coursesAdapter);
-        coursesAdapter.notifyDataSetChanged();
-
-        return thisPage;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.e_learning_mobile;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -74,13 +75,18 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void signMeUp() {
-        final String register_url = String.format("%s%s", WelcomeActivity.CARRY_HOST, "register");
+        final String register_url = String.format("%s%s", WelcomeActivity.CARRY_HOST, "/api/register");
+
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Authenticating...");
+        progressDialog.show();
 
         StringRequest loginRequest = new StringRequest(Request.Method.POST, register_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 try {
+                    progressDialog.dismiss();
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean("success")) {
                         WelcomeActivity.CARRY_TOKEN = jsonObject.getString("token");

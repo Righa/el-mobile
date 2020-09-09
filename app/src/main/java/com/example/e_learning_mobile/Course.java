@@ -9,7 +9,7 @@ public class Course {
     private String description;
     private String courseAvatar;
 
-    Course(String courseId, String subjectId, User teacher, String name, String description, String courseAvatar) {
+    Course(String courseId, String subjectId, User teacher, String name, String description) {
         this.courseId = courseId;
         this.subjectId = subjectId;
         this.teacher = teacher;
@@ -39,5 +39,9 @@ public class Course {
 
     public String getCourseAvatar() {
         return courseAvatar;
+    }
+
+    public void setCourseAvatar(String courseAvatar) {
+        this.courseAvatar = courseAvatar;
     }
 }

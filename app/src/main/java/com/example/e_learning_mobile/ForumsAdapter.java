@@ -56,10 +56,12 @@ public class ForumsAdapter extends RecyclerView.Adapter<ForumsAdapter.ViewHolder
         }
 
         void catchMe(Forum currentForum) {
-            Glide.with(meContext).load(currentForum.getUser().getUserAvatar()).into(userAvatar);
-            userName.setText(currentForum.getUser().getFirstName());
+            if (currentForum.getUser().getUserAvatar() != null) {
+                Glide.with(meContext).load(currentForum.getUser().getUserAvatar()).into(userAvatar);
+            }
+            userName.setText(String.format("%s%s%s", currentForum.getUser().getFirstName(), " ", currentForum.getUser().getLastName()));
             answerText.setText(currentForum.getQuestion());
-            forumStatus.setText(R.string._1_attempts);
+            forumStatus.setText(currentForum.getStatus());
         }
     }
 }

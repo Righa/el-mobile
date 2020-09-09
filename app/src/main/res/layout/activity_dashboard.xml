@@ -20,8 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabGravity="fill"
-        app:tabMode="scrollable"
-        app:tabPadding="0dp"
         app:tabTextColor="@color/egg_tabs"
         app:tabSelectedTextColor="@color/page_back"
         app:tabIndicatorColor="@color/page_back"

@@ -7,7 +7,7 @@ public class Forum {
     private String status;
     private User student;
 
-    public Forum(String forumId, String subjectId, String question, String status, User student) {
+    Forum(String forumId, String subjectId, String question, String status, User student) {
         this.forumId = forumId;
         this.subjectId = subjectId;
         this.question = question;

@@ -1,6 +1,8 @@
 package com.example.e_learning_mobile;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,7 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -60,16 +63,29 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void logMeIn() {
-        final String login_url = String.format("%s%s", WelcomeActivity.CARRY_HOST, "api/login");
+        final String login_url = String.format("%s%s", WelcomeActivity.CARRY_HOST, "/api/login");
+
+
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Authenticating...");
+        progressDialog.show();
+
 
         StringRequest loginRequest = new StringRequest(Request.Method.POST, login_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 try {
+                    progressDialog.dismiss();
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean("success")) {
                         WelcomeActivity.CARRY_TOKEN = jsonObject.getString("token");
+                        //save session
+                        SharedPreferences sharedPreferences = getSharedPreferences(WelcomeActivity.CARRY_BUCKET, MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString(WelcomeActivity.TOKEN_BUCKET, jsonObject.getString("token"));
+                        editor.apply();
+
                         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                         JSONObject user = jsonObject.getJSONObject("user");
                         WelcomeActivity.CURRENT_USER = new User(user.getString("id"), user.getString("first_name"), user.getString("last_name"), user.getString("email"), user.getString("role"));
@@ -98,6 +114,22 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         };
+        loginRequest.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 8000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 0;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(loginRequest);

@@ -59,11 +59,18 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
         }
 
         void catchMe(Course currentCourse) {
-            Glide.with(meContext).load(R.drawable.ic_courses).into(courseAvatar);
+
+            if (currentCourse.getCourseAvatar() != null) {
+                Glide.with(meContext).load(currentCourse.getCourseAvatar()).into(courseAvatar);
+            }
+
+            if (currentCourse.getTeacher().getUserAvatar() != null) {
+                Glide.with(meContext).load(currentCourse.getTeacher().getUserAvatar()).into(teacherAvatar);
+            }
+
             courseName.setText(currentCourse.getName());
             courseDescription.setText(currentCourse.getDescription());
-            Glide.with(meContext).load(R.drawable.ic_account_circle).into(teacherAvatar);
-            teacherName.setText(currentCourse.getTeacher().getFirstName());
+            teacherName.setText(String.format("%s%s%s",currentCourse.getTeacher().getFirstName(), " ", currentCourse.getTeacher().getLastName()));
         }
     }
 }

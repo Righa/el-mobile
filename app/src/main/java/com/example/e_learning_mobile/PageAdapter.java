@@ -20,9 +20,7 @@ public class PageAdapter extends FragmentStatePagerAdapter {
         switch (position) {
             case 0: return new ExploreFragment();
             case 1: return new CoursesFragment();
-            case 2: return new ExamsFragment();
-            case 3: return new ForumsFragment();
-            case 4: return new AssessmentFragment();
+            case 2: return new ForumsFragment();
             default: return null;
         }
     }
