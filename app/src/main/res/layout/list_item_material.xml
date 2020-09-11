@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="11dp"
+    app:cardCornerRadius="11dp">
+
+    <RelativeLayout
+        android:id="@+id/material_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/material_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pdf"
+            android:background="@drawable/alt_icon_file"
+            android:padding="6dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/material_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="11dp"
+            android:text="@string/material_name"
+            android:textColor="@color/colorPrimary"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/material_type"
+            android:layout_toRightOf="@id/material_type"
+            android:layout_toStartOf="@id/download_button"
+            android:layout_toLeftOf="@id/download_button" />
+
+        <Button
+            android:id="@+id/download_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/download"
+            android:textColor="@color/egg_tabs"
+            android:background="@drawable/round_buttons"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -19,9 +19,6 @@
             android:name=".ProfileActivity"
             android:label="@string/my_profile" android:parentActivityName=".DashboardActivity" />
         <activity
-            android:name=".ReviewActivity"
-            android:label="@string/review" android:parentActivityName=".DashboardActivity" />
-        <activity
             android:name=".ExamViewActivity"
             android:label="@string/exams" android:parentActivityName=".DashboardActivity" />
         <activity

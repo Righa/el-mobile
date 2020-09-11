@@ -18,7 +18,7 @@ public class ForumsAdapter extends RecyclerView.Adapter<ForumsAdapter.ViewHolder
     private Context meContext;
     private ArrayList<Forum> meForums;
 
-    public ForumsAdapter(Context meContext, ArrayList<Forum> meForums) {
+    ForumsAdapter(Context meContext, ArrayList<Forum> meForums) {
         this.meContext = meContext;
         this.meForums = meForums;
     }

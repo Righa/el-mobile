@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AssessmentFragment">
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/page_back">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/assessment_head"
+        android:id="@+id/topic_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/reviews"
+        android:padding="11dp"
+        android:text="@string/topic_name"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
-        android:padding="11dp"/>
+        android:textSize="22sp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/assessment_recycler"
+        android:id="@+id/material_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/assessment_head" />
+        android:layout_below="@id/topic_name" />
 
 </RelativeLayout>

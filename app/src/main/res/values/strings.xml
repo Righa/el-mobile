@@ -43,7 +43,6 @@
     <string name="my_courses">My Courses</string>
     <string name="reviews">Reviews</string>
     <string name="course_activities">Course activities</string>
-    <string name="course_name">Course name</string>
     <string name="exam_name">Exam name</string>
     <string name="duration_90min">Duration: 90min</string>
     <string name="status_open">status: open</string>
@@ -51,4 +50,15 @@
     <string name="forum_question">forum question</string>
     <string name="_1_attempts">1 attempts</string>
     <string name="_30_30">30/30</string>
+    <string name="topic_name">Topic name</string>
+    <string name="pdf">pdf</string>
+    <string name="material_name">Marerial name</string>
+    <string name="download">DOWNLOAD</string>
+    <string name="_1">1.</string>
+    <string name="question">question</string>
+    <string name="choice_x">Choice x</string>
+    <string name="course_name">Course name</string>
+    <string name="teacher_name">Teacher name</string>
+    <string name="unenroll">UNENROLL</string>
+    <string name="open">OPEN</string>
 </resources>

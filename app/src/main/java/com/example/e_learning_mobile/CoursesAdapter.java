@@ -1,6 +1,7 @@
 package com.example.e_learning_mobile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +57,18 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
             courseDescription = itemView.findViewById(R.id.course_description);
             teacherAvatar = itemView.findViewById(R.id.teacher_avatar);
             teacherName = itemView.findViewById(R.id.teacher_name);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int cPosition = getAdapterPosition();
+                    Course cCourse = meCourses.get(cPosition);
+
+                    Intent intent = new Intent(meContext, CourseViewActivity.class);
+                    intent.putExtra("course_id", cCourse.getCourseId());
+                    meContext.startActivity(intent);
+                }
+            });
         }
 
         void catchMe(Course currentCourse) {
